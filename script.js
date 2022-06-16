@@ -1,5 +1,8 @@
 const interval = 10;
 const countDown = moment('01/05/2024');
+const suspense = document.getElementById("suspense");
+
+
 
 let $days = $('#days'),
     $hours = $('#hours'),
@@ -20,6 +23,9 @@ function convertTime(timeRemainder) {
         $('#hours').text(roundNumber(hour));
         $('#minutes').text(roundNumber(minute));
         $('#seconds').text(roundNumber(second));
+
+        suspense.play();
+        
 }
 function roundNumber(number) {
     let roundedNum = number;
@@ -27,4 +33,6 @@ function roundNumber(number) {
         roundedNum = "0" + roundedNum;
     }
     return roundedNum;
+    
 }
+
